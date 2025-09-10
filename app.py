@@ -98,5 +98,8 @@ st.title("🍎 Apple Catch Game")
 webrtc_streamer(
     key="apple-game",
     video_processor_factory=AppleGame,
-    media_stream_constraints={"video": True, "audio": False}
+    media_stream_constraints={"video": True, "audio": False},
+    rtc_configuration={
+        "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
+    }
 )
